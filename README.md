@@ -2,7 +2,7 @@
 
 ### Projektbeschreibung
 
-ExamByte ist eine Plattform für Lehrende und Studierende, um Tests durchzuführen und zu bewerten. Das System bietet eine Authentifizierung über GitHub OAuth und unterstützt spezialisierte Rollen für Studierende, darunter Korrektor:innen und Organisator:innen. Die Benutzerrechte sind über eine Konfigurationsdatei festgelegt, die beim Start der Anwendung eingelesen wird, sodass Änderungen ohne Neukompilierung der Java-Dateien möglich sind.
+ExamByte ist eine Plattform für Lehrende und Studierende, um Tests durchzuführen und zu bewerten. Das System bietet eine Authentifizierung über GitHub OAuth und unterstützt spezialisierte Rollen für Studierende, darunter Korrektor:innen und Organisator:innen. Die Benutzerrechte sind über eine Konfigurationsdatei festgelegt, die beim Start der Anwendung eingelesen wird, sodass Änderungen ohne Neukompilierung der Java-Dateien möglich sind. Die Daten aller Nutzer werden in einer PostgreSQL-Datenbank gespeichert, die über Docker verwaltet wird. 
 
 ### Hauptfunktionen
 
@@ -42,6 +42,7 @@ Organisator:innen legen Tests an und weisen Korrektor:innen Aufgaben zu.
 Korrektor:innen bewerten Antworten und speichern ihre Bewertungen.
 
 Organisator:innen exportieren Testergebnisse als CSV.
+
 
 ### Zukünftige Erweiterungen
 
