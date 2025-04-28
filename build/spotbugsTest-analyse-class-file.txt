@@ -1,0 +1,15 @@
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/config/TestcontainersConfiguration.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/anwendung/ExamByteApplicationTests.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/anwendung/ArchitectureTest.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/persistenz/TestDataRepositoryTest.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/persistenz/StudentDataRepositoryTest.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/web/StudentControllerTest.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/web/KorrektorControllerTest.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/web/OrganisatorControllerTest.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/web/MainControllerTest.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/ExambyteMitContainer.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/applicationService/StudentServiceTest.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/applicationService/TestServiceTest.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/helper/WithOAuth2UserSecurityContextFactory.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/helper/WithMockOAuth2User.class
+/Users/artemii/Library/Mobile Documents/com~apple~CloudDocs/UNI/ProPra2/exambyte-exambyte-befma/build/classes/java/test/exambyte/application/helper/TestObjectGenerator.class

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+          defer></script>
+  <title>ExamByte</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand text-primary" href="/">ExamByte</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{uebersicht}">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Log In</a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-sm mt-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="display-4 mb-5 text-left">
+        <i class="bi bi-easel2"></i>
+        <span th:text="${testObject.getTestName()}">NameDesTests</span>
+      </h1>
+
+      <!--Navigation Tab-->
+
+      <ul class="mb-5 nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link"  th:href="@{settingsTest(testName = ${testObject.getTestName()})}">Einstellungen</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Fragen</a>
+        </li>
+      </ul>
+
+
+
+
+
+
+      <h3 class="mb-3 display-4 text-left">Liste aller Fragen</h3>
+      <hr>
+      <!--Die Liste-->
+      <div class="mb-5" th:if="${testObject.getFragen()} == null">
+        <h5 class="text-info">Noch keine Fragen erstellt</h5>
+      </div>
+
+      <div  th:each="question : ${testObject.getFragen()}">
+        <div class="question rounded border border-secondary mb-3 p-3 pt-4" >
+          <div class="question-topic mb-2">
+            <h4 th:text="${question.getTopic()}">Question Topic</h4>
+          </div>
+          <div class="question-title mb-2">
+            <h5 th:text="${question.getTitle()}">Question Title</h5>
+          </div>
+
+          <!-- Conditional rendering based on the type of question -->
+            <!-- MultipleChoice -->
+            <div th:if="${question.getType() == 'mc'} " class="mc-question-body">
+              <div class="question-answers">
+                <ul>
+                  <li th:each="answer : ${question.getAnswers()}">
+
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Free Text Question -->
+            <div th:if="${question.getType() == 'freetext'}" class="free-text-body mb-3">
+              <div class="question-body mb-3">
+                <span th:text="${question.getBody()}">Question Body</span>
+              </div>
+              <div class="question-points mb-2">
+                <span th:text="'Maximale Punktenanzahl ist :' + ${question.getPoints()}">Points</span>
+              </div>
+              <!-- Button to toggle the text -->
+                <button class="btn btn-outline-warning mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#toggleText" aria-expanded="false" aria-controls="toggleText">
+                  Loesung anschauen
+                </button>
+                <!-- The hidden content -->
+                <div th:text="${question.getCorrectAnswers()}" id="toggleText" class="collapse  text-light mb-3">
+                  This is the hidden text that will appear when clicked.
+                </div>
+            </div>
+          </div>
+        </div>
+
+      <!--The Button to Create a Question-->
+      <hr>
+      <form class="" method="post" th:action="@{createNewQuestion}">
+        <input type="hidden" name="testName" th:value="${testObject.getTestName()}">
+        <button type="submit" class="btn btn-success mb-3">Neue Frage erstellen</button>
+        <div class="mb-3 form-check">
+          <input type="radio" class="form-check-input" id="freeText" name="questionType" value="freetext" required>
+          <label class="form-check-label" for="freeText">Freitextaufgabe</label>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="radio" class="form-check-input" name="questionType" id="MC" value="mc">
+          <label class="form-check-label" for="MC">Multiple-Choice</label>
+        </div>
+      </form>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
